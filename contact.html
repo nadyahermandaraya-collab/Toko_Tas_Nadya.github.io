@@ -1,429 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAYA | Contact Us</title>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <title>Contact Us | RAYA BAGS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Young+Serif&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+:root {
+  --bg: #FFF4E8;
+  --card: #FFFFFF;
+  --line: #F0D8CF;
+  --ink: #3A1F2B;
+  --muted: #8B6B74;
+  --pink: #D63A6B;
+  --coral: #FFC2D4;
+}
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #faf8f5;
-      color: #292521;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: 'Young Serif', serif; font-weight: 400; line-height: 1; letter-spacing: -.02em; }
+.container { width: min(1240px, 92%); margin: 0 auto; }
 
-    header {
-      background: #fff;
-      padding: 22px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee8e2;
-    }
 
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      letter-spacing: 5px;
-      font-weight: 600;
-      color: #705b4d;
-    }
+.ticker { background: var(--pink); color: #FFFFFF; overflow: hidden; white-space: nowrap; font-weight: 800; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; padding: 10px 0; }
+.ticker-track { display: inline-flex; animation: scroll 30s linear infinite; }
+.ticker-group { display: inline-flex; gap: 40px; padding-right: 40px; }
+@keyframes scroll { to { transform: translateX(-50%); } }
 
-    nav {
-      display: flex;
-      gap: 35px;
-    }
 
-    nav a {
-      text-decoration: none;
-      color: #554b43;
-      font-size: 12px;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
+header { position: sticky; top: 0; z-index: 100; background: rgba(255, 244, 232, .92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.nav-wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 72px; }
+.logo { font-family: 'Young Serif', serif; font-weight: 400; font-size: 26px; letter-spacing: -.02em; }
+.logo sup { color: var(--pink); font-size: 11px; margin-left: 2px; }
+nav { display: flex; gap: 34px; justify-content: center; }
+nav a { position: relative; padding: 6px 0; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); transition: .2s; }
+nav a:hover, nav a.active { color: var(--ink); }
+nav a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--pink); }
+.header-actions { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.cart-btn { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--pink); color: var(--pink); padding: 8px 8px 8px 16px; font-size: 11px; font-weight: 800; letter-spacing: 1.3px; text-transform: uppercase; transition: .2s; }
+.badge { background: var(--pink); color: #FFFFFF; min-width: 24px; height: 24px; padding: 0 6px; display: grid; place-items: center; font-size: 11px; transition: .2s; }
+.cart-btn:hover { background: var(--pink); color: #FFFFFF; }
+.cart-btn:hover .badge { background: #FFFFFF; color: var(--pink); }
+.menu-toggle { display: none; background: transparent; border: 1px solid var(--line); color: var(--ink); padding: 11px 14px; font: inherit; font-size: 11px; font-weight: 800; letter-spacing: 1px; cursor: pointer; }
 
-    nav a:hover,
-    nav a.active {
-      color: #b28c70;
-    }
 
-    .hero {
-      background: #e9ded4;
-      text-align: center;
-      padding: 85px 20px;
-    }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--pink); color: #FFFFFF; border: 1px solid var(--pink); font-family: inherit; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: .2s; }
+.btn:hover { background: transparent; color: var(--pink); }
+.btn.outline { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn.outline:hover { background: var(--ink); color: #FFFFFF; }
+.btn.dark { background: #FFFFFF; color: var(--pink); border-color: #FFFFFF; }
+.btn.dark:hover { background: transparent; color: #FFFFFF; }
 
-    .hero p {
-      font-size: 11px;
-      letter-spacing: 4px;
-      color: #8b6e5b;
-      margin-bottom: 18px;
-    }
 
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 55px;
-      font-weight: 400;
-      color: #44372f;
-      margin-bottom: 15px;
-    }
+.eyebrow { display: block; color: var(--pink); font-size: 12px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+.section { padding: 90px 0; }
+.section.tight { padding: 60px 0; }
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
+.section-head h2 { font-size: clamp(36px, 5vw, 64px); }
+.link-arrow { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 2px solid var(--pink); padding-bottom: 4px; }
+.page-head { padding: 70px 0 44px; border-bottom: 1px solid var(--line); }
+.page-head h1 { font-size: clamp(52px, 9vw, 120px); }
+.page-head h1 em { font-style: normal; color: var(--pink); }
+.page-head p { color: var(--muted); margin-top: 20px; max-width: 480px; font-size: 14px; }
+.band { background: var(--pink); color: #FFFFFF; }
+.band-inner { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; padding: 60px 0; }
+.band p { font-weight: 800; letter-spacing: 2px; font-size: 12px; text-transform: uppercase; margin-bottom: 14px; }
+.band h2 { font-size: clamp(56px, 11vw, 160px); line-height: .88; }
 
-    .hero span {
-      font-size: 14px;
-      color: #75665b;
-    }
 
-    .contact-section {
-      padding: 85px 10%;
-    }
+.hero { padding: 60px 0 0; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 50px; align-items: center; }
+.hero h1 { font-size: clamp(56px, 8.4vw, 128px); margin-bottom: 34px; }
+.hero h1 .stroke { -webkit-text-stroke: 2px var(--ink); color: transparent; }
+.hero h1 .o { color: var(--pink); }
+.hero-sub { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.hero-sub p { color: var(--muted); max-width: 360px; font-size: 14px; }
+.hero-img { position: relative; }
+.hero-img img { width: 100%; height: 560px; object-fit: cover; }
+.badge-spin { position: absolute; top: -28px; left: -28px; width: 108px; height: 108px; border-radius: 50%; background: var(--coral); color: #FFFFFF; display: grid; place-items: center; text-align: center; font-family: 'Young Serif', serif; font-weight: 400; font-size: 14px; line-height: 1.1; transform: rotate(-12deg); }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 60px; }
+.fact { padding: 22px 0 22px 24px; border-left: 1px solid var(--line); }
+.fact:first-child { padding-left: 0; border-left: none; }
+.fact strong { display: block; font-family: 'Young Serif', serif; font-size: 36px; line-height: 1; color: var(--pink); margin-bottom: 4px; }
+.fact span { font-size: 12px; color: var(--muted); }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 55px;
-    }
 
-    .section-title p {
-      color: #b28c70;
-      font-size: 11px;
-      letter-spacing: 4px;
-      margin-bottom: 15px;
-    }
+.cat-list { border-top: 1px solid var(--line); }
+.cat-row { display: grid; grid-template-columns: 70px 1fr auto; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); transition: .25s; }
+.cat-row .n { color: var(--muted); font-size: 13px; font-weight: 700; }
+.cat-row .t { font-family: 'Young Serif', serif; font-weight: 400; font-size: clamp(26px, 4vw, 48px); letter-spacing: -.02em; line-height: 1.1; transition: .25s; }
+.cat-row .a { font-size: 26px; color: var(--pink); transition: .25s; }
+.cat-row:hover { padding-left: 20px; padding-right: 20px; background: var(--card); }
+.cat-row:hover .t { color: var(--pink); }
 
-    .section-title h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 38px;
-      font-weight: 400;
-    }
 
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 65px;
-    }
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.product-card { background: var(--card); border: 1px solid var(--line); transition: .25s; }
+.product-card:hover { border-color: var(--pink); transform: translateY(-4px); }
+.product-image { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #F6E1D8; }
+.product-image img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
+.product-card:hover .product-image img { transform: scale(1.06); }
+.tag { position: absolute; top: 0; left: 0; background: var(--pink); color: #FFFFFF; font-size: 10px; font-weight: 800; letter-spacing: 1px; padding: 7px 12px; }
+.tag.sale { background: var(--coral); }
+.product-info { padding: 16px; }
+.cat-name { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; }
+.product-info h3 { font-size: 19px; margin-bottom: 14px; letter-spacing: -.01em; }
+.price-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.price { font-weight: 800; font-size: 15px; color: var(--pink); }
+.sq-btn { width: 40px; height: 40px; background: var(--pink); color: #FFFFFF; border: none; font-size: 20px; font-weight: 700; display: grid; place-items: center; cursor: pointer; transition: .2s; font-family: inherit; }
+.sq-btn:hover { background: var(--ink); }
+.add-btn { border: 1px solid var(--pink); background: transparent; color: var(--pink); padding: 10px 14px; font: inherit; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: .2s; }
+.add-btn:hover, .add-btn.done { background: var(--pink); color: #FFFFFF; }
 
-    .contact-info h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 29px;
-      font-weight: 400;
-      margin-bottom: 18px;
-    }
 
-    .contact-info>p {
-      color: #81766e;
-      line-height: 1.9;
-      font-size: 14px;
-      margin-bottom: 35px;
-    }
+.benefits { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.benefit { padding: 28px 24px; border-right: 1px solid var(--line); }
+.benefit:first-child { padding-left: 0; }
+.benefit:last-child { border-right: none; }
+.benefit .n { color: var(--pink); font-size: 12px; font-weight: 800; letter-spacing: 1.5px; }
+.benefit h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 800; letter-spacing: 0; margin: 10px 0 4px; }
+.benefit p { font-size: 13px; color: var(--muted); }
 
-    .info-item {
-      display: flex;
-      gap: 18px;
-      margin-bottom: 28px;
-      align-items: flex-start;
-    }
 
-    .info-icon {
-      width: 45px;
-      height: 45px;
-      background: #eee5dc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 19px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; margin: 40px 0 22px; }
+.toolbar h2 { font-size: 30px; }
+.search-box input { width: 300px; max-width: 100%; background: transparent; border: none; border-bottom: 2px solid var(--line); color: var(--ink); padding: 12px 0; font: inherit; font-size: 14px; outline: none; transition: .2s; }
+.search-box input:focus { border-color: var(--pink); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.filter-btn { padding: 10px 18px; background: transparent; color: var(--muted); border: 1px solid var(--line); font: inherit; font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: .2s; }
+.filter-btn:hover { color: var(--ink); border-color: var(--ink); }
+.filter-btn.active { background: var(--pink); color: #FFFFFF; border-color: var(--pink); }
+.result-info { color: var(--muted); font-size: 12px; margin-bottom: 22px; }
+.empty-message { display: none; grid-column: 1 / -1; text-align: center; padding: 70px 20px; color: var(--muted); }
+.empty-message h3 { font-size: 30px; color: var(--ink); margin-bottom: 10px; }
 
-    .info-item h4 {
-      font-size: 13px;
-      margin-bottom: 7px;
-      letter-spacing: 1px;
-    }
 
-    .info-item p {
-      color: #81766e;
-      font-size: 13px;
-      line-height: 1.8;
-    }
+.cart-layout { display: grid; grid-template-columns: 1.7fr 1fr; gap: 30px; align-items: start; }
+.cart-list { border: 1px solid var(--line); background: var(--card); padding: 6px 24px 24px; }
+.cart-row { display: grid; grid-template-columns: 2fr 1fr 1fr 36px; gap: 14px; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.cart-row.head { font-size: 11px; letter-spacing: 1.5px; color: var(--muted); font-weight: 800; }
+.item { display: flex; gap: 14px; align-items: center; min-width: 0; }
+.item img { width: 76px; height: 92px; object-fit: cover; }
+.item h3 { font-size: 17px; margin-bottom: 4px; }
+.item small { color: var(--muted); font-size: 11px; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--line); width: fit-content; }
+.qty button { width: 32px; height: 32px; background: transparent; border: none; color: var(--ink); cursor: pointer; font-size: 16px; }
+.qty button:hover { background: var(--pink); color: #FFFFFF; }
+.qty span { min-width: 26px; text-align: center; font-size: 13px; font-weight: 700; }
+.remove-btn { width: 34px; height: 34px; background: transparent; border: none; color: var(--coral); font-size: 22px; cursor: pointer; }
+.continue { display: inline-block; margin-top: 22px; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--pink); }
+.summary { border: 1px solid var(--pink); padding: 28px; position: sticky; top: 100px; }
+.summary h2 { font-size: 26px; margin-bottom: 22px; }
+.sum-row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.sum-total { display: flex; justify-content: space-between; border-top: 1px dashed var(--line); padding-top: 18px; margin: 18px 0; font-weight: 800; font-size: 18px; }
+.sum-total span:last-child { color: var(--pink); }
+.note { background: var(--card); padding: 13px 15px; font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+.summary .btn { width: 100%; justify-content: center; }
+.empty-cart { text-align: center; border: 1px dashed var(--line); padding: 80px 20px; }
+.empty-cart h2 { font-size: clamp(30px, 5vw, 48px); margin-bottom: 12px; }
+.empty-cart p { color: var(--muted); font-size: 14px; margin-bottom: 26px; }
 
-    .contact-form {
-      background: #fff;
-      padding: 40px;
-      box-shadow: 0 8px 35px rgba(70, 50, 35, 0.05);
-    }
 
-    .contact-form h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 29px;
-      font-weight: 400;
-      margin-bottom: 28px;
-    }
+.about-hero { padding: 80px 0 50px; }
+.about-hero h1 { font-size: clamp(56px, 11vw, 170px); }
+.about-hero h1 em { font-style: normal; color: var(--pink); }
+.about-hero p { margin-top: 24px; color: var(--muted); letter-spacing: 3px; font-size: 12px; font-weight: 700; }
+.about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 60px; align-items: center; }
+.about-grid img { width: 100%; height: 540px; object-fit: cover; }
+.about-grid h2 { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 22px; }
+.about-grid p { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+.values { border-top: 1px solid var(--line); }
+.value-row { display: grid; grid-template-columns: 90px 300px 1fr; gap: 20px; align-items: baseline; padding: 30px 0; border-bottom: 1px solid var(--line); }
+.value-row .n { color: var(--pink); font-weight: 800; }
+.value-row h3 { font-size: clamp(28px, 3.5vw, 42px); }
+.value-row p { color: var(--muted); font-size: 14px; }
 
-    .form-group {
-      margin-bottom: 22px;
-    }
 
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      margin-bottom: 10px;
-      color: #554b43;
-    }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: start; }
+.contact-info h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 16px; }
+.contact-info > p { color: var(--muted); font-size: 14px; margin-bottom: 30px; }
+.info-item { display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+.info-item h4 { font-size: 11px; letter-spacing: 1.5px; color: var(--pink); font-weight: 800; padding-top: 3px; }
+.info-item p { font-size: 14px; }
+.form-card { border: 1px solid var(--line); background: var(--card); padding: 36px; }
+.form-card h2 { font-size: 30px; margin-bottom: 24px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 11px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.form-group input, .form-group textarea { width: 100%; background: transparent; border: none; border-bottom: 2px solid var(--line); color: var(--ink); padding: 10px 0; font: inherit; font-size: 14px; outline: none; transition: .2s; }
+.form-group input:focus, .form-group textarea:focus { border-color: var(--pink); }
+.form-group textarea { height: 110px; resize: vertical; }
+.social-links { display: flex; flex-wrap: wrap; gap: 12px; }
 
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 14px;
-      border: 1px solid #e7dfd8;
-      background: #fcfbf9;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 13px;
-      outline: none;
-    }
 
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #b28c70;
-    }
+footer { border-top: 1px solid var(--line); padding: 24px 0; margin-top: 40px; }
+.footer-row { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.foot-links a { font-size: 12px; font-weight: 600; color: var(--muted); transition: .2s; }
+.foot-links a:hover { color: var(--pink); }
+.news { display: flex; border: 1px solid var(--line); }
+.news input { width: 190px; min-width: 0; background: transparent; border: none; outline: none; color: var(--ink); padding: 10px 14px; font: inherit; font-size: 12px; }
+.news button { background: var(--pink); border: none; color: #FFFFFF; font-weight: 800; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 0 16px; cursor: pointer; }
+.copy { color: var(--muted); font-size: 11px; margin-top: 16px; }
 
-    .form-group textarea {
-      height: 130px;
-      resize: vertical;
-    }
 
-    .submit-btn {
-      background: #705b4d;
-      color: #fff;
-      border: none;
-      padding: 16px 35px;
-      font-size: 11px;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+@media (max-width: 980px) {
+  .hero-grid, .about-grid, .contact-grid, .cart-layout { grid-template-columns: 1fr; }
+  .hero-img img { height: 420px; }
+  .badge-spin { left: 10px; top: -24px; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .benefits { grid-template-columns: repeat(2, 1fr); }
+  .benefit:nth-child(odd) { padding-left: 0; }
+  .benefit:nth-child(even) { border-right: none; }
+  .benefit:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .about-grid img { height: 400px; }
+  .summary { position: static; }
+  .value-row { grid-template-columns: 60px 1fr; }
+  .value-row p { grid-column: 2; }
+}
+@media (max-width: 760px) {
+  .nav-wrap { grid-template-columns: 1fr auto; }
+  .menu-toggle { display: block; }
+  nav { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 4%; }
+  nav.show { display: flex; }
+  nav a { padding: 14px 0; }
+  nav a.active::after { display: none; }
+  nav a.active { color: var(--pink); }
+  .section { padding: 60px 0; }
+  .page-head { padding: 50px 0 34px; }
+}
+@media (max-width: 560px) {
+  .product-grid { gap: 10px; }
+  .product-info { padding: 12px; }
+  .product-info h3 { font-size: 16px; }
+  .price-row { flex-direction: column; align-items: stretch; }
+  .add-btn, .sq-btn { width: 100%; }
+  .benefits { grid-template-columns: 1fr; }
+  .benefit { border-right: none; border-bottom: 1px solid var(--line); padding-left: 0; }
+  .fact strong { font-size: 26px; }
+  .cart-list { overflow-x: auto; padding: 6px 14px 20px; }
+  .cart-row { min-width: 470px; }
+  .form-card { padding: 24px; }
+  .info-item { grid-template-columns: 1fr; gap: 6px; }
+  .footer-row { flex-direction: column; align-items: flex-start; }
+  .news { width: 100%; }
+  .news input { flex: 1; width: auto; }
+}
 
-    .submit-btn:hover {
-      background: #a4866f;
-    }
 
-    .social-section {
-      background: #eee5dc;
-      padding: 55px 20px;
-      text-align: center;
-    }
+h1, h2, h3 { line-height: 1.05; }
+.tag.sale { background: var(--coral); color: var(--ink); }
+.badge-spin { color: var(--ink); }
+.remove-btn { color: var(--pink); }
 
-    .social-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 30px;
-      font-weight: 400;
-      margin-bottom: 15px;
-    }
-
-    .social-section p {
-      font-size: 13px;
-      color: #81766e;
-      margin-bottom: 25px;
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      text-decoration: none;
-      color: #705b4d;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    footer {
-      background: #44372f;
-      color: #fff;
-      padding: 45px 8% 25px;
-      text-align: center;
-    }
-
-    footer h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      letter-spacing: 5px;
-      margin-bottom: 15px;
-    }
-
-    footer p {
-      color: #d0c3b8;
-      font-size: 12px;
-      line-height: 2;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid #66564b;
-      margin-top: 30px;
-      padding-top: 20px;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      nav {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        font-size: 10px;
-      }
-
-      .hero h1 {
-        font-size: 40px;
-      }
-
-      .contact-section {
-        padding: 55px 6%;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .contact-form {
-        padding: 25px;
-      }
-    }
-  </style>
+</style>
 </head>
-
 <body>
+  <div class="ticker"><div class="ticker-track"><span class="ticker-group"><span>Gratis ongkir min. Rp 500.000 ✦ Koleksi baru 2026 ✦ Retur 7 hari ✦ Diskon hingga 50% ✦ </span><span>Gratis ongkir min. Rp 500.000 ✦ Koleksi baru 2026 ✦ Retur 7 hari ✦ Diskon hingga 50% ✦ </span></span><span class="ticker-group"><span>Gratis ongkir min. Rp 500.000 ✦ Koleksi baru 2026 ✦ Retur 7 hari ✦ Diskon hingga 50% ✦ </span><span>Gratis ongkir min. Rp 500.000 ✦ Koleksi baru 2026 ✦ Retur 7 hari ✦ Diskon hingga 50% ✦ </span></span></div></div>
+  <header><div class="container nav-wrap"><a href="index.html" class="logo">RAYA<sup>®</sup></a><nav id="navigation"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></nav><div class="header-actions"><a href="cart.html" class="cart-btn">Keranjang <span class="badge" id="cart-count">0</span></a><button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">MENU</button></div></div></header>
 
-  <header>
-    <div class="logo">RAYA</div>
-    <nav>
-      <a href="index.html">HOME</a>
-      <a href="shop.html">SHOP</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html" class="active">CONTACT</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <p>WE ARE HERE FOR YOU</p>
-    <h1>Get In Touch</h1>
-    <span>We would love to hear from you. Let us make your shopping experience special.</span>
+  <section class="page-head">
+    <div class="container">
+      <span class="eyebrow">Kami siap membantu</span>
+      <h1>Get in <em>touch</em></h1>
+      <p>Kami senang mendengar darimu. Mari buat pengalaman belanjamu lebih istimewa.</p>
+    </div>
   </section>
 
-  <section class="contact-section">
-    <div class="section-title">
-      <p>CONTACT RAYA</p>
-      <h2>Let's Talk Together</h2>
-    </div>
-
-    <div class="contact-container">
+  <section class="section">
+    <div class="container contact-grid">
       <div class="contact-info">
-        <h3>We'd Love To Hear From You</h3>
-        <p>Have questions about our collections, products, or orders? Our team is ready to help you find the perfect bag
-          for every occasion.</p>
+        <h2>Kami ingin mendengar darimu</h2>
+        <p>Ada pertanyaan tentang koleksi, produk, atau pesananmu? Tim kami siap membantu kamu menemukan tas yang pas untuk setiap kesempatan.</p>
 
-        <div class="info-item">
-          <div class="info-icon">⌖</div>
-          <div>
-            <h4>OUR LOCATION</h4>
-            <p>Jl. Fashion Avenue No. 28<br>Jakarta, Indonesia 11470</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon">✉</div>
-          <div>
-            <h4>EMAIL ADDRESS</h4>
-            <p>hello@rayabags.com<br>support@rayabags.com</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon">☎</div>
-          <div>
-            <h4>PHONE NUMBER</h4>
-            <p>+62 812-3456-7890<br>+62 821-9876-5432</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon">◷</div>
-          <div>
-            <h4>OPENING HOURS</h4>
-            <p>Monday - Friday: 09.00 - 18.00<br>Saturday: 09.00 - 15.00<br>Sunday: Closed</p>
-          </div>
-        </div>
+        <div class="info-item"><h4>LOKASI</h4><p>Jl. Fashion Avenue No. 28<br>Jakarta, Indonesia 11470</p></div>
+        <div class="info-item"><h4>EMAIL</h4><p>hello@rayabags.com<br>support@rayabags.com</p></div>
+        <div class="info-item"><h4>TELEPON</h4><p>+62 812-3456-7890<br>+62 821-9876-5432</p></div>
+        <div class="info-item" style="border-bottom:1px solid var(--line)"><h4>JAM OPERASIONAL</h4><p>Senin - Jumat: 09.00 - 18.00<br>Sabtu: 09.00 - 15.00<br>Minggu: Tutup</p></div>
       </div>
 
-      <div class="contact-form">
-        <h3>Send Us A Message</h3>
-
+      <div class="form-card">
+        <h2>Kirim pesan</h2>
         <form onsubmit="sendMessage(event)">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="Enter your name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" id="email" placeholder="Enter your email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" placeholder="What is this about?" required>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" placeholder="Write your message here..." required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">SEND MESSAGE</button>
+          <div class="form-group"><label for="name">Nama</label><input type="text" id="name" placeholder="Masukkan namamu" required></div>
+          <div class="form-group"><label for="email">Email</label><input type="email" id="email" placeholder="Masukkan emailmu" required></div>
+          <div class="form-group"><label for="subject">Subjek</label><input type="text" id="subject" placeholder="Tentang apa pesan ini?" required></div>
+          <div class="form-group"><label for="message">Pesan</label><textarea id="message" placeholder="Tulis pesanmu di sini..." required></textarea></div>
+          <button type="submit" class="btn">Kirim via WhatsApp →</button>
         </form>
       </div>
     </div>
   </section>
 
-  <section class="social-section">
-    <h2>Follow Our Journey</h2>
-    <p>Stay connected and discover the latest collections from RAYA.</p>
-    <div class="social-links">
-      <a href="https://www.instagram.com/" target="_blank">INSTAGRAM</a>
-      <a href="https://www.tiktok.com/" target="_blank">TIKTOK</a>
-      <a href="https://www.facebook.com/" target="_blank">FACEBOOK</a>
-      <a href="https://www.pinterest.com/" target="_blank">PINTEREST</a>
+  <section class="section tight" style="padding-top:0">
+    <div class="container">
+      <span class="eyebrow">Ikuti perjalanan kami</span>
+      <div class="social-links">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="btn outline">Instagram</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" class="btn outline">TikTok</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="btn outline">Facebook</a>
+        <a href="https://www.pinterest.com/" target="_blank" rel="noopener" class="btn outline">Pinterest</a>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <h2>RAYA</h2>
-    <p>Elegance in Every Carry.</p>
-    <p>Discover bags that express your personality and complete your style.</p>
+  <footer><div class="container"><div class="footer-row"><a href="index.html" class="logo">RAYA<sup>®</sup></a><div class="foot-links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a><a href="contact.html">Contact</a></div><form class="news" onsubmit="subscribe(event)"><input type="email" placeholder="Email kamu" required><button type="submit">Kirim</button></form></div><div class="copy">© 2026 RAYA BAGS. All Rights Reserved.</div></div></footer>
+  <script>
+function toggleMenu() {
+  document.getElementById('navigation').classList.toggle('show');
+}
 
-    <div class="footer-bottom">
-      <p>© 2026 RAYA. All Rights Reserved.</p>
-    </div>
-  </footer>
+function getCart() {
+  try { return JSON.parse(localStorage.getItem('rayaCart')) || []; }
+  catch (e) { return []; }
+}
 
+function saveCart(cart) {
+  try { localStorage.setItem('rayaCart', JSON.stringify(cart)); } catch (e) {}
+}
+
+function formatPrice(price) {
+  return 'Rp ' + price.toLocaleString('id-ID');
+}
+
+function updateCartCount() {
+  const el = document.getElementById('cart-count');
+  if (!el) return;
+  el.textContent = getCart().reduce((t, i) => t + i.quantity, 0);
+}
+
+function subscribe(event) {
+  event.preventDefault();
+  alert('Terima kasih sudah berlangganan RAYA BAGS!');
+  event.target.reset();
+}
+
+document.addEventListener('DOMContentLoaded', updateCartCount);
+
+</script>
   <script>
     function sendMessage(event) {
       event.preventDefault();
@@ -433,12 +349,15 @@
       const subject = document.getElementById('subject').value;
       const message = document.getElementById('message').value;
 
-      const text = `Hello RAYA,%0A%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ASubject: ${encodeURIComponent(subject)}%0AMessage: ${encodeURIComponent(message)}`;
+      const text = encodeURIComponent(
+        'Halo RAYA,\n\nNama: ' + name +
+        '\nEmail: ' + email +
+        '\nSubjek: ' + subject +
+        '\nPesan: ' + message
+      );
 
-      window.open(`https://wa.me/6281234567890?text=${text}`, '_blank');
+      window.open('https://wa.me/6281234567890?text=' + text, '_blank');
     }
   </script>
-
 </body>
-
 </html>
